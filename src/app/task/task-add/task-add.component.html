@@ -1,0 +1,17 @@
+<header class="header">
+  <h6>LISTA DE TAREAS</h6>
+  <br />
+  <div class="row-flex">
+    Tarea:
+    <input
+      appOnlyAlphanumeric
+      [formControl]="txtInput"
+      (keyup.enter)="add()"
+      autofocus
+    />
+    <button
+      type="button"
+      (click)="add()"
+      class="btn btn-primary">Agregar</button>
+  </div>
+</header>

@@ -1,0 +1,11 @@
+<div class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <h6><b>BIENVENIDO</b> {{ (username$ | async)?.toLowerCase() }}</h6>
+            <hr>
+            <app-task-add></app-task-add>
+            <br>
+            <app-task-list></app-task-list>
+        </div>
+    </div>
+</div>

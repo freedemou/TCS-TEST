@@ -1,0 +1,10 @@
+.content {
+    height: 100vh;
+    padding: 2em 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

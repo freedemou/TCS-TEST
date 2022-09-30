@@ -1,0 +1,19 @@
+<li>
+  <div class="view">
+    <input
+      class="toggle"
+      [formControl]="chkCheck"
+      type="checkbox" />
+
+    <label (dblclick)="edit()">
+      {{ task.text }}
+    </label>
+
+    <button 
+      *ngIf="!task.check" 
+      class="destroy" 
+      (click)="remove()">
+      X
+    </button>
+  </div>
+</li>

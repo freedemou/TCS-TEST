@@ -1,0 +1,10 @@
+.row-flex {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input {
+    width: 220px;
+    height: 38px;
+}
