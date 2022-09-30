@@ -15,12 +15,10 @@ import { AppState } from '../../app.reducer';
 export class TaskItemComponent implements OnInit {
 
   @Input() task!: Task;
-  @ViewChild('inputFisico') txtInputFisico!: ElementRef;
+  @ViewChild('inputFisico') txtInputDOM!: ElementRef;
 
   chkCheck!: FormControl;
   txtInput!: FormControl;
-
-  editando: boolean = false;
 
   constructor( private store: Store<AppState> ) { }
 
@@ -28,18 +26,16 @@ export class TaskItemComponent implements OnInit {
     this.chkCheck = new FormControl( this.task.check );
     this.txtInput = new FormControl( this.task.text, Validators.required );
 
-    this.chkCheck.valueChanges.subscribe( valor => {
+    this.chkCheck.valueChanges.subscribe( () => {
       this.store.dispatch( actions.toggle({ id: this.task.id }) );
     });
   }
 
   edit() {
-
-    this.editando = true;
     this.txtInput.setValue( this.task.text );
 
     setTimeout(() => {
-      this.txtInputFisico.nativeElement.select();
+      this.txtInputDOM.nativeElement.select();
     }, 1);
 
   }
